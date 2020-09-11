@@ -1,0 +1,22 @@
+server:
+  port: 8761
+eureka:
+  client:
+    register-with-eureka: false
+    fetch-registry: true
+    service-url:
+      defaultZone: http://${eureka.instance.ip-address}:8762/eureka/
+  instance:
+    hostname: localhost
+    ip-address: 127.0.0.1
+    # 服务名，默认取 spring.application.name 配置值，如果没有则为 unknown
+    appname: eureka-client01
+  server:
+    # eureka服务器清理无效节点的时间间隔，单位：毫秒，缺省：60000，即60秒
+    eviction-interval-timer-in-ms: 60000
+    # 当eureka服务器在短时间内丢失过多客户端时，自我保护模式可使服务端不再删除失去连接的客户端
+    enable-self-preservation: false
+spring:
+  application:
+    # 应用名称，将会显示在Eureka界面的应用名称列
+    name: eureka-server01

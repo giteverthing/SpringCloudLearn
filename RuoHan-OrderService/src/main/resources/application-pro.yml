@@ -1,0 +1,29 @@
+server:
+  port: 8082
+eureka:
+  client:
+    allow-redirects: false
+    healthcheck:
+      enabled: false
+    service-url:
+      defaultZone: http://127.0.0.1:8761/eureka #, http://127.0.0.1:8762/eureka
+mybatis:
+  #  config-location: mybatis-config.xml
+  configuration:
+    cache-enabled: true
+    map-underscore-to-camel-case: true
+    default-executor-type: reuse
+    default-fetch-size: 100
+    default-statement-timeout: 30
+    use-generated-keys: true
+  type-aliases-package: com.microservice.ruohan.entity
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/TestDb?useUnicode=true&characterEncoding=utf8&allowMultiQueries=true&serverTimezone=Asia/Shanghai
+    #    data-username: sa
+    #    data-password: sasa989
+    username: sa
+    password: sasa989
+#    type: com.mysql.cj.jdbc.MysqlConnectionPoolDataSource
+

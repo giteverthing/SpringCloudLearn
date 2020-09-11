@@ -1,0 +1,43 @@
+server:
+  port: 6001
+
+spring:
+  application:
+    name: zuul-gateway
+  cloud:
+    inetutils:
+      default-hostname: localhost
+      default-ip-address: 127.0.0.1
+      timeout-seconds: 6
+
+eureka:
+  instance:
+    hostname: localhost
+    lease-expiration-duration-in-seconds: 10
+    lease-renewal-interval-in-seconds: 5
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:8761/eureka #,http://127.0.0.1:8762/eureka
+    register-with-eureka: true
+    # 必须设置为true，否则ribbon无法获取到eureka里的服务器列表
+    fetch-registry: true
+    enabled: true
+zuul:
+  routes:
+    #    order-service-provider: /api/**
+    order-route:
+      service-id: order-service
+      path: /api/**
+      stripPrefix: true
+    ignored-patterns: /*-gateway/**
+  #  ignored-services: ruohan-orderservice
+  ignored-headers: false
+#  prefix: /apigateway
+order-service:
+  ribbon:
+    # 基于配置文件形式的 针对单个服务的 Ribbon 负载均衡策略
+    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RoundRobinRule
+ribbon:
+  eureka:
+    enable: true
+

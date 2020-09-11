@@ -1,0 +1,17 @@
+server:
+  port: 8762
+eureka:
+  client:
+    register-with-eureka: false
+    fetch-registry: true
+    service-url:
+      defaultZone: http://${eureka.instance.ip-address}:8761/eureka/
+  instance:
+    hostname: localhost
+    ip-address: 127.0.0.1
+  server:
+    eviction-interval-timer-in-ms: 60000
+    enable-self-preservation: false
+spring:
+  application:
+    name: eureka-server02

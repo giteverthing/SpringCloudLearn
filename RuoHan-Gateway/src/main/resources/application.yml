@@ -1,0 +1,31 @@
+server:
+  port: 6002
+spring:
+  application:
+    name: springcloud-gateway
+  cloud:
+    gateway:
+      routes:
+        - id: order-service-route
+          # 通过注册中心来查找服务（lb代表从注册中心获取服务，并且负载均衡）
+          uri: lb://order-service
+          # 匹配到的以/product开头的路径都转发到product的服务，相当于访问 lb://order-service/**
+          predicates:
+            - Path=/sp-gateway/order/**
+          filters:
+            # 去掉匹配到的路径的第一段
+            - StripPrefix=1
+
+        - id: product-service-route
+          uri: lb://product-service
+          predicates:
+            - Path=/sp-gateway/product/**
+          filters:
+            # 去掉匹配到的路径的第一段
+            - StripPrefix=1
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:8761/eureka

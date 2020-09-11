@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="RuoHan-App" />
+        <module name="RuoHan-Gateway" />
+        <module name="RuoHan-Eureka" />
+        <module name="RuoHan-ZuulGateway" />
+        <module name="RuoHan-OrderService" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="RuoHan" target="1.8" />
+      <module name="RuoHan-App" target="1.8" />
+      <module name="RuoHan-Eureka" target="1.8" />
+      <module name="RuoHan-Gateway" target="1.8" />
+      <module name="RuoHan-OrderService" target="1.8" />
+      <module name="RuoHan-ZuulGateway" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="RuoHan" options="-parameters" />
+      <module name="RuoHan-App" options="-parameters" />
+      <module name="RuoHan-Eureka" options="-parameters" />
+      <module name="RuoHan-Gateway" options="-parameters" />
+      <module name="RuoHan-OrderService" options="-parameters" />
+      <module name="RuoHan-ZuulGateway" options="-parameters" />
+    </option>
+  </component>
+</project>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/RuoHan-App/RuoHan-App.iml" filepath="$PROJECT_DIR$/RuoHan-App/RuoHan-App.iml" />
+      <module fileurl="file://$PROJECT_DIR$/RuoHan-Eureka/RuoHan-Eureka.iml" filepath="$PROJECT_DIR$/RuoHan-Eureka/RuoHan-Eureka.iml" />
+      <module fileurl="file://$PROJECT_DIR$/RuoHan-Gateway/RuoHan-Gateway.iml" filepath="$PROJECT_DIR$/RuoHan-Gateway/RuoHan-Gateway.iml" />
+      <module fileurl="file://$PROJECT_DIR$/RuoHan-OrderService/RuoHan-OrderService.iml" filepath="$PROJECT_DIR$/RuoHan-OrderService/RuoHan-OrderService.iml" />
+      <module fileurl="file://$PROJECT_DIR$/RuoHan-ZuulGateway/RuoHan-ZuulGateway.iml" filepath="$PROJECT_DIR$/RuoHan-ZuulGateway/RuoHan-ZuulGateway.iml" />
+    </modules>
+  </component>
+</project>
