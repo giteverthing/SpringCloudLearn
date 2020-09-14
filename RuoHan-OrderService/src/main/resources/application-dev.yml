@@ -25,5 +25,17 @@ spring:
     #    data-password: sasa989
     username: sa
     password: sasa989
+  data:
+    elasticsearch:
+      repositories:
+        enabled: true
+#      client:
+#        reactive:
+#          endpoints: 192.168.31.239:9300
+      cluster-name: docker-cluster
+      cluster-nodes: 192.168.31.239:9300
+#  elasticsearch:
+#    rest:
+#      uris: http://192.168.31.239:9200/
 #    type: com.mysql.cj.jdbc.MysqlConnectionPoolDataSource
 
