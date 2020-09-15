@@ -23,7 +23,8 @@ public class RabbitMqScheduledProducer {
     @Autowired
     private RabbitTemplate rabbitTemplate;
 
-    @Scheduled(cron = "0/5 * 15 * * *")
+//    @Scheduled(cron = "0/5 * 15 * * *")
+    @Scheduled(fixedRate = 5)
     public void produceDirectMessage() {
         String messageId = String.valueOf(UUID.randomUUID());
         String messageData = "test message,hello!";
@@ -38,7 +39,7 @@ public class RabbitMqScheduledProducer {
         logger.info("produceDirectMessage...");
     }
 
-//    @Scheduled(fixedRate = 10)
+    //    @Scheduled(fixedRate = 10)
     public void produceTopicMessage() {
         String messageId = String.valueOf(UUID.randomUUID());
         String messageData = "message:B I Z 1!";
@@ -53,7 +54,7 @@ public class RabbitMqScheduledProducer {
         logger.info("produceTopicMessage...");
     }
 
-//    @Scheduled(fixedRate = 10)
+    //    @Scheduled(fixedRate = 10)
     public void produceTopicMessage2() {
         String messageId = String.valueOf(UUID.randomUUID());
         String messageData = "message:B I Z 2!";

@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component;
 
 import java.util.Map;
 
-@Component
+//@Component
 @RabbitListener(queues = "fanout.B")
 public class FanoutReceiverB {
     @RabbitHandler
