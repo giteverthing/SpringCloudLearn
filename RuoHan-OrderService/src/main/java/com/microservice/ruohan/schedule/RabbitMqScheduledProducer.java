@@ -24,7 +24,7 @@ public class RabbitMqScheduledProducer {
     private RabbitTemplate rabbitTemplate;
 
 //    @Scheduled(cron = "0/5 * 15 * * *")
-    @Scheduled(fixedRate = 5)
+//    @Scheduled(fixedRate = 5)
     public void produceDirectMessage() {
         String messageId = String.valueOf(UUID.randomUUID());
         String messageData = "test message,hello!";
@@ -69,7 +69,7 @@ public class RabbitMqScheduledProducer {
         logger.info("produceTopicMessage2...");
     }
 
-    @Scheduled(fixedRate = 10)
+//    @Scheduled(fixedRate = 10)
     public void produceFanoutMessage() {
         String messageId = String.valueOf(UUID.randomUUID());
         String messageData = "message:testFanoutMessage!";

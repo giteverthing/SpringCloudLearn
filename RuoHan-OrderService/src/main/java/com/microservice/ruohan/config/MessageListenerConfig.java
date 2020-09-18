@@ -7,6 +7,7 @@ import org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.core.env.Environment;
 
 @Configuration
 public class MessageListenerConfig {
@@ -14,14 +15,13 @@ public class MessageListenerConfig {
     private CachingConnectionFactory connectionFactory;
     @Autowired
     private MyAckReciver myAckReciver;//消息接收处理类
+    @Autowired
+    private Environment env;
 
     @Bean
     public SimpleMessageListenerContainer simpleMessageListenerContainer() {
         SimpleMessageListenerContainer container = new SimpleMessageListenerContainer(connectionFactory);
-        container.setConcurrentConsumers(1);
-        container.setMaxConcurrentConsumers(1);
-        // RabbitMQ默认是自动确认，这里改为手动确认消息
-        container.setAcknowledgeMode(AcknowledgeMode.MANUAL);
+
         // 设置一个队列
         //container.setQueueNames("TestDirectQueue");
         // 设置多个队列
@@ -36,6 +36,17 @@ public class MessageListenerConfig {
         //container.addQueues(new Queue("TestDirectQueue3",true));
         container.setMessageListener(myAckReciver);
 
+        //并发配置
+        container.setConcurrentConsumers(1);
+        container.setMaxConcurrentConsumers(1);
+        container.setPrefetchCount(5);
+//        container.setConcurrentConsumers(env.getProperty("spring.rabbitmq.listener.concurrency", Integer.class));
+//        container.setMaxConcurrentConsumers(env.getProperty("spring.rabbitmq.listener.max-concurrency", Integer.class));
+//        container.setPrefetchCount(env.getProperty("spring.rabbitmq.listener.prefetch", Integer.class));
+
+        //消息确认机制
+        // RabbitMQ默认是自动确认，这里改为手动确认消息
+        container.setAcknowledgeMode(AcknowledgeMode.MANUAL);
         return container;
     }
 }

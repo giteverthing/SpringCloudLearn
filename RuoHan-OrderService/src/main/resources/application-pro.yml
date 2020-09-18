@@ -20,10 +20,10 @@ mybatis:
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://127.0.0.1:3306/TestDb?useUnicode=true&characterEncoding=utf8&allowMultiQueries=true&serverTimezone=Asia/Shanghai
+    url: jdbc:mysql://192.168.31.239:3306/TestDb?useUnicode=true&characterEncoding=utf8&allowMultiQueries=true&serverTimezone=Asia/Shanghai
     #    data-username: sa
     #    data-password: sasa989
-    username: sa
-    password: sasa989
+    username: remoteadmin
+    password: Aabb@124124
 #    type: com.mysql.cj.jdbc.MysqlConnectionPoolDataSource
 

@@ -38,6 +38,11 @@ public class OrderController {
         return list;
     }
 
+    @GetMapping("/details/{productId}")
+    public Order getDetails(@PathVariable int productId) {
+        return orderService.findById(productId);
+    }
+
     @GetMapping("{productId}")
     @CustomLog(name = "OrderProduct", isSaveRequestData = true)
     public String add(@PathVariable int productId) {

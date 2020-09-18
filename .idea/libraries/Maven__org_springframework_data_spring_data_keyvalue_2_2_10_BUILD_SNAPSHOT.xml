@@ -1,13 +1,13 @@
 <component name="libraryTable">
   <library name="Maven: org.springframework.data:spring-data-keyvalue:2.2.10.BUILD-SNAPSHOT">
     <CLASSES>
-      <root url="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-keyvalue/2.2.10.BUILD-SNAPSHOT/spring-data-keyvalue-2.2.10.BUILD-20200910.061720-59.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-keyvalue/2.2.10.BUILD-SNAPSHOT/spring-data-keyvalue-2.2.10.BUILD-20200916.084610-69.jar!/" />
     </CLASSES>
     <JAVADOC>
-      <root url="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-keyvalue/2.2.10.BUILD-SNAPSHOT/spring-data-keyvalue-2.2.10.BUILD-20200910.061720-59-javadoc.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-keyvalue/2.2.10.BUILD-SNAPSHOT/spring-data-keyvalue-2.2.10.BUILD-20200916.084610-69-javadoc.jar!/" />
     </JAVADOC>
     <SOURCES>
-      <root url="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-keyvalue/2.2.10.BUILD-SNAPSHOT/spring-data-keyvalue-2.2.10.BUILD-20200910.061720-59-sources.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-keyvalue/2.2.10.BUILD-SNAPSHOT/spring-data-keyvalue-2.2.10.BUILD-20200916.084610-69-sources.jar!/" />
     </SOURCES>
   </library>
 </component>
